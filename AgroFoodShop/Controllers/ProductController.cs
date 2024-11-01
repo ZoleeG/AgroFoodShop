@@ -16,8 +16,6 @@ namespace AgroFoodShop.Controllers
         }
         public IActionResult List()
         {
-            //ViewBag.CurrentCategory = "Dairy";
-            //return View(_productRepository.AllProducts);
             ProductListViewModel productListViewModel = new ProductListViewModel(_productRepository.AllProducts, "Dairy");
             return View(productListViewModel);
         }
