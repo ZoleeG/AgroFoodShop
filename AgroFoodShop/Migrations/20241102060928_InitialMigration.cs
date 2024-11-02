@@ -35,7 +35,7 @@ namespace AgroFoodShop.Migrations
                     LongDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AllergyInformation = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Price = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    ImageURL = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ImageThumbnailUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     IsProductOfTheWeek = table.Column<bool>(type: "bit", nullable: false),
                     InStock = table.Column<bool>(type: "bit", nullable: false),
