@@ -8,9 +8,9 @@ namespace AgroFoodShop.Models
         {
             AgroFoodShopDbContext context =
                 applicationBuilder.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<AgroFoodShopDbContext>();
-            if(!context.Categories.Any())
+            if (!context.Categories.Any())
             {
-                context.Categories.AddRange(Categories.Select(context => context.Value));
+                context.Categories.AddRange(Categories.Select(c => c.Value));
             }
 
             if (!context.Products.Any())

@@ -17,7 +17,7 @@
                  aria-label="Agro Food Shop navigation header">
                 <div class="container-xl">
                     <a class="navbar-brand" asp-controller="Home" asp-action="Index">
-                        <img src="images/agro-food-shop-logo_horiz_transparent-bg.png" width="280" height="47" class="d-inline-block align-top mb-2 mt-1"
+                        <img src="images/agro-food-shop-logo_horiz_transparent-bg.png" width="151" height="47" class="d-inline-block align-top mb-2 mt-1"
                              alt="Agro Food Shop Logo">
                     </a>
 
@@ -28,18 +28,18 @@
 
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <vc:category-menu></vc:category-menu>
                             <li class="nav-item">
-                                <a asp-controller="Home" asp-action="Index" class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a asp-controller="Pie" asp-action="List" class="nav-link">Products</a>
+                                <a asp-controller="Contact" asp-action="Index" class="nav-link">Contact</a>
                             </li>
                         </ul>
+                        <vc:shopping-cart-summary></vc:shopping-cart-summary>
                     </div>
                 </div>
             </nav>
         </header>
         @RenderBody()
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -14,10 +14,29 @@ namespace AgroFoodShop.Controllers
             _productRepository = productRepository;
             _categoryRepository = categoryRepository;
         }
-        public IActionResult List()
+
+        public ViewResult List(string category)
         {
-            ProductListViewModel productListViewModel = new ProductListViewModel(_productRepository.AllProducts, "Dairy");
-            return View(productListViewModel);
+            IEnumerable<Product> products;
+            string? currentCategory;
+
+            if(string.IsNullOrEmpty(category))
+            {
+                products = _productRepository.AllProducts
+                    .OrderBy(p => p.ProductId);
+
+                currentCategory = "All products";
+            }
+            else
+            {
+                products = _productRepository.AllProducts
+                    .Where(p => p.Category.CategoryName == category)
+                    .OrderBy(p => p.ProductId);
+
+                currentCategory = _categoryRepository.AllCategories.FirstOrDefault(c => c.CategoryName == category)?.CategoryName;
+            }
+
+            return View(new ProductListViewModel(products, currentCategory));
         }
 
         public IActionResult Details(int id)
