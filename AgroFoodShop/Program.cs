@@ -11,6 +11,8 @@ builder.Services.AddScoped<IShoppingCart, ShoppingCart>(sp => ShoppingCart.GetCa
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();
 
+builder.Services.AddRazorPages();
+
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<AgroFoodShopDbContext>(options => {
@@ -31,6 +33,8 @@ if(app.Environment.IsDevelopment())
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+app.MapRazorPages();
 
 DbInitializer.Seed(app);
 

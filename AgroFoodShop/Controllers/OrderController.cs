@@ -41,7 +41,7 @@ namespace AgroFoodShop.Controllers
 
         public IActionResult CheckoutComplete()
         {
-            ViewBag.CheckoutCompleteMessage = "Thank you for your order. Now it's been forwarded to our processing team. They'll be in touch with you very soon.";
+            ViewBag.CheckoutCompleteMessage = "Thank you for your order. Processing is underway.";
             return View();
         }
     }
