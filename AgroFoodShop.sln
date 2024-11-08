@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AgroFoodShop", "AgroFoodShop\AgroFoodShop.csproj", "{30594086-C1B4-4896-975A-138E8B88237B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgroFoodShopTests", "AgroFoodShopTests\AgroFoodShopTests.csproj", "{84CCD15A-8FCB-415C-9ABF-763DCC4B5946}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{30594086-C1B4-4896-975A-138E8B88237B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30594086-C1B4-4896-975A-138E8B88237B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30594086-C1B4-4896-975A-138E8B88237B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84CCD15A-8FCB-415C-9ABF-763DCC4B5946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84CCD15A-8FCB-415C-9ABF-763DCC4B5946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84CCD15A-8FCB-415C-9ABF-763DCC4B5946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84CCD15A-8FCB-415C-9ABF-763DCC4B5946}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
