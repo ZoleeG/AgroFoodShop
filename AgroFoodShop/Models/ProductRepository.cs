@@ -30,5 +30,10 @@ namespace AgroFoodShop.Models
         {
             return _agroFoodShopDbContext.Products.FirstOrDefault(p => p.ProductId == productId);
         }
+
+        public IEnumerable<Product> SearchProducts(string searchQuery)
+        {
+            return _agroFoodShopDbContext.Products.Where(p => p.Name.Contains(searchQuery));
+        }
     }
 }

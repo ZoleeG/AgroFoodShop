@@ -26,5 +26,10 @@ namespace AgroFoodShop.Models
         }
 
         public Product? GetProductById(int productId) => AllProducts.FirstOrDefault(p => p.ProductId == productId);
+
+        public IEnumerable<Product> SearchProducts(string searchQuery)
+        {
+            return AllProducts.Where(p => p.Name.Contains(searchQuery));
+        }
     }
 }
