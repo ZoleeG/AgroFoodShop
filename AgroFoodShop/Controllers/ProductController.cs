@@ -49,5 +49,10 @@ namespace AgroFoodShop.Controllers
             return View(product);
         }
 
+        public IActionResult Search()
+        {
+            return View();
+        }
+
     }
 }
