@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 
 namespace AgroFoodShop.Models
 {
-    public class AgroFoodShopDbContext : DbContext
+    public class AgroFoodShopDbContext : IdentityDbContext
     {
         public AgroFoodShopDbContext(DbContextOptions<AgroFoodShopDbContext> options) : base(options)
         {

@@ -1,9 +1,19 @@
 using AgroFoodShop.App;
 using AgroFoodShop.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("AgroFoodShopDbContextConnection") ?? throw new InvalidOperationException("Connection string 'AgroFoodShopDbContextConnection' not found.");
+
+builder.Services.AddDbContext<AgroFoodShopDbContext>(options => {
+    options.UseSqlServer(connectionString);
+});
+
+builder.Services.AddDefaultIdentity<IdentityUser>()
+    .AddEntityFrameworkStores<AgroFoodShopDbContext>();
+
+builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
@@ -18,26 +28,18 @@ builder.Services.AddRazorPages();
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.Services.AddControllersWithViews()
-    .AddJsonOptions(options =>
-    {
-        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-    });
-
-builder.Services.AddDbContext<AgroFoodShopDbContext>(options => {
-    options.UseSqlServer(
-        builder.Configuration["ConnectionStrings:AgroFoodShopDbContextConnection"]);
-});
-
 var app = builder.Build();
-
-app.UseStaticFiles();
-app.UseSession();
 
 if(app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage();
 }
+
+app.UseStaticFiles();
+app.UseSession();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
