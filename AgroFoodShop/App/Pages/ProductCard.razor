@@ -1,4 +1,8 @@
-﻿<div class="col-sm-4 col-lg-4 col-md-4">
+﻿@{
+    CultureInfo.CurrentCulture
+         = new CultureInfo("en-GB");
+}
+<div class="col-sm-4 col-lg-4 col-md-4">
     <div class="thumbnail">
         <img src="@Product?.ImageThumbnailUrl" width=250 class="rounded m-2" alt="@Product?.Name photo">
         <div class="caption">
